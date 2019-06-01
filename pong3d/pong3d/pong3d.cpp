@@ -3,10 +3,8 @@
 
 #include <stdlib.h>
 #include <math.h>
-#include <GLUT/glut.h>
-#include "gamestate.h"
+#include <GL/glut.h>
 
-GameState* gs = new GameState();
 
 GLfloat	 lightPosA[] = { 0.0f, 0.0f, 55.0f, 1.0f };
 GLfloat	 lightPosB[] = { 0.0f, 0.0f, 65.0f, 1.0f };
@@ -566,7 +564,6 @@ void myKeyboard(unsigned char theKey, int mouseX, int mouseY)
 
 int main(int argc, char* argv[])
 {
-    gs->Reset();
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutCreateWindow("Pong3D");

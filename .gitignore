@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/pong3d/pong3d/Debug
+/pong3d/pong3d/*.user
+/pong3d/Debug

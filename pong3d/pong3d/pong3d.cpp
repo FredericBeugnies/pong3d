@@ -1,5 +1,7 @@
 // pong3d.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// 
+
+// test
 
 #include <stdlib.h>
 #include <math.h>
@@ -462,7 +464,7 @@ void TimerFunction(int value)
         //if (GetAsyncKeyState(0x50)) pause = !pause;
     }
 
-    glutTimerFunc(50, TimerFunction, 1);
+    glutTimerFunc(10, TimerFunction, 1);
     glutPostRedisplay();
 
 }

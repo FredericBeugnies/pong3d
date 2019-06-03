@@ -11,6 +11,8 @@
 
 Color player1_scoreColor( 255, 255, 0 );
 Color player2_scoreColor( 0, 255, 0 );
+Color lightConeColor( 255, 0, 0 );
+Color lightBulbColor( 255, 255, 0 );
 
 GLfloat	 lightPosA[] = { 0.0f, 0.0f, 55.0f, 1.0f };
 GLfloat	 lightPosB[] = { 0.0f, 0.0f, 65.0f, 1.0f };
@@ -285,14 +287,14 @@ void DessinerScene(void)
     glLightfv(GL_LIGHT0, GL_POSITION, lightPosA);
     glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, spotDirA);
 
-    glColor3ub(255, 0, 0);
+	glColor( lightConeColor );
     glTranslatef(lightPosA[0], lightPosA[1], lightPosA[2]);
     glutSolidCone(4.0f, 6.0f, 15, 15);
 
     glPushAttrib(GL_LIGHTING_BIT);
 
     glDisable(GL_LIGHTING);
-    glColor3ub(255, 255, 0);
+    glColor( lightBulbColor );
     glutSolidSphere(3.0f, 15, 15);
 
     glPopAttrib();
@@ -306,7 +308,7 @@ void DessinerScene(void)
     glLightfv(GL_LIGHT1, GL_POSITION, lightPosB);
     glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spotDirB);
 
-    glColor3ub(255, 0, 0);
+	glColor( lightConeColor );
 
     glTranslatef(lightPosB[0], lightPosB[1], lightPosB[2]);
 
@@ -315,8 +317,8 @@ void DessinerScene(void)
     glPushAttrib(GL_LIGHTING_BIT);
 
     glDisable(GL_LIGHTING);
-    glColor3ub(255, 255, 0);
-    glutSolidSphere(3.0f, 15, 15);
+	glColor( lightBulbColor );
+	glutSolidSphere(3.0f, 15, 15);
 
     glPopAttrib();
 

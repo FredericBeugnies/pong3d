@@ -6,7 +6,11 @@
 #include <GL/glut.h>
 
 #include "Color.h"
+#include "glHelpers.h"
 
+
+Color player1_scoreColor( 255, 255, 0 );
+Color player2_scoreColor( 0, 255, 0 );
 
 GLfloat	 lightPosA[] = { 0.0f, 0.0f, 55.0f, 1.0f };
 GLfloat	 lightPosB[] = { 0.0f, 0.0f, 65.0f, 1.0f };
@@ -252,7 +256,7 @@ void DessinerScene(void)
 
     // Score A
     glTranslatef(-35.0, -25.0, -50.0);
-    glColor3ub(255, 255, 0);
+	glColor( player1_scoreColor );
     for (i = 0; i < ScoreA; i++)
     {
         Carre();
@@ -263,8 +267,8 @@ void DessinerScene(void)
     glPopMatrix();
     glPushMatrix();
     glTranslatef(35.0, -25.0, -50.0);
-    glColor3ub(0, 255, 0);
-    for (i = 0; i < ScoreB; i++)
+	glColor( player2_scoreColor );
+	for (i = 0; i < ScoreB; i++)
     {
         Carre();
         glTranslatef(-5.0, 0.0, 0.0);

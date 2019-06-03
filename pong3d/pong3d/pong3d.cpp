@@ -1,11 +1,11 @@
 // pong3d.cpp : This file contains the 'main' function. Program execution begins and ends there.
 // 
 
-// test
-
 #include <stdlib.h>
 #include <math.h>
 #include <GL/glut.h>
+
+#include "Color.h"
 
 
 GLfloat	 lightPosA[] = { 0.0f, 0.0f, 55.0f, 1.0f };

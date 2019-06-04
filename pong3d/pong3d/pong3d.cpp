@@ -16,6 +16,9 @@ Color lightBulbColor( 255, 255, 0 );
 Color ballColor( 0, 255, 255 ); // cyan
 Color barColor1( 200, 0, 0 );
 Color barColor2( 0, 0, 200 );
+Color playerBarColor1( 0, 0, 255 );
+Color playerBarColor2( 255, 255, 255 );
+Color playerBarColor3( 60, 80, 150 );
 
 
 GLfloat	 lightPosA[] = { 0.0f, 0.0f, 55.0f, 1.0f };
@@ -187,7 +190,7 @@ void AfficheBarre(void)
 
     glBegin(GL_QUADS);
 
-    glColor3ub(0, 0, 255);
+    glColor( playerBarColor1 );
 
     //Face avant
     glNormal3f(0.0f, 0.0f, 1.0f);
@@ -202,7 +205,8 @@ void AfficheBarre(void)
     glVertex3f(-2.f, 6.f, -4.f);
     glVertex3f(2.f, 6.f, -4.f);
     glVertex3f(2.f, -6.f, -4.f);
-    glColor3ub(255, 255, 255);
+
+    glColor( playerBarColor2 );
 
     // Face superieure
     glNormal3f(0.0f, 1.0f, 0.0f);
@@ -218,7 +222,7 @@ void AfficheBarre(void)
     glVertex3f(2.f, -6.f, 4.f);
     glVertex3f(-2.f, -6.f, 4.f);
 
-    glColor3ub(60, 80, 150);
+    glColor( playerBarColor3 );
 
     // face de droite
     glNormal3f(1.0f, 0.0f, 0.0f);

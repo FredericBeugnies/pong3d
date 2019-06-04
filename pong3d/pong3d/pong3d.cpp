@@ -13,6 +13,7 @@ Color player1_scoreColor( 255, 255, 0 );
 Color player2_scoreColor( 0, 255, 0 );
 Color lightConeColor( 255, 0, 0 );
 Color lightBulbColor( 255, 255, 0 );
+Color ballColor( 0, 255, 255 ); // cyan
 
 GLfloat	 lightPosA[] = { 0.0f, 0.0f, 55.0f, 1.0f };
 GLfloat	 lightPosB[] = { 0.0f, 0.0f, 65.0f, 1.0f };
@@ -334,7 +335,7 @@ void DessinerScene(void)
 
     glPopMatrix();
     glPushMatrix();
-    glColor3f(0.0f, 1.0f, 1.0f);
+    glColor( ballColor );
     glTranslatef(SphereX, SphereY, 0.0f);
     glFrontFace(GL_CCW);
     glutSolidSphere(3.0, 30, 30);

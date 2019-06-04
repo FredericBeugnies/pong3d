@@ -14,6 +14,8 @@ Color player2_scoreColor( 0, 255, 0 );
 Color lightConeColor( 255, 0, 0 );
 Color lightBulbColor( 255, 255, 0 );
 Color ballColor( 0, 255, 255 ); // cyan
+Color barColor1( 200, 0, 0 );
+
 
 GLfloat	 lightPosA[] = { 0.0f, 0.0f, 55.0f, 1.0f };
 GLfloat	 lightPosB[] = { 0.0f, 0.0f, 65.0f, 1.0f };
@@ -88,7 +90,7 @@ void Decor()
     // Barre du dessus
     // Face avant
     glNormal3f(0.0f, 0.0f, 1.0f);
-    glColor3ub(200, 0, 0);
+    glColor( barColor1 );
     glVertex3f(-60.0f, 50.0f, fZ);
     glVertex3f(-60.0f, 35.0f, fZ);
     glColor3ub(0, 0, 200);
@@ -97,7 +99,7 @@ void Decor()
 
     // Face avant
     glNormal3f(0.0f, 0.0f, 1.0f);
-    glColor3ub(200, 0, 0);
+    glColor( barColor1 );
     glVertex3f(-60.0f, -35.0f, fZ);
     glVertex3f(-60.0f, -50.0f, fZ);
     glColor3ub(0, 0, 200);
@@ -118,14 +120,14 @@ void Decor()
 
     glVertex3f(-60.0f, 50.0f, bZ);
     glVertex3f(-60.0f, 35.0f, bZ);
-    glColor3ub(200, 0, 0);
+    glColor( barColor1 );
     glVertex3f(60.0f, 35.0f, bZ);
     glVertex3f(60.0f, 50.0f, bZ);
 
     glColor3ub(0, 0, 200);
     glVertex3f(-60.0f, -35.0f, bZ);
     glVertex3f(-60.0f, -50.0f, bZ);
-    glColor3ub(200, 0, 0);
+    glColor( barColor1 );
     glVertex3f(60.0f, -50.0f, bZ);
     glVertex3f(60.0f, -35.0f, bZ);
 
@@ -144,7 +146,7 @@ void Decor()
     glVertex3f(60.0f, -35.0f, fZ);
 
     glNormal3f(-1.0f, 0.0f, 0.0f);
-    glColor3ub(200, 0, 0);
+    glColor( barColor1 );
     glVertex3f(-60.0f, 50.0f, fZ);
     glVertex3f(-60.0f, 35.0f, fZ);
     glColor3ub(0, 0, 200);
@@ -155,12 +157,12 @@ void Decor()
     glColor3ub(0, 0, 200);
     glVertex3f(60.0f, 35.0f, fZ);
     glVertex3f(60.0f, 50.0f, fZ);
-    glColor3ub(200, 0, 0);
+    glColor( barColor1 );
     glVertex3f(60.0f, 50.0f, bZ);
     glVertex3f(60.0f, 35.0f, bZ);
 
     glNormal3f(-1.0f, 0.0f, 0.0f);
-    glColor3ub(200, 0, 0);
+    glColor( barColor1 );
     glVertex3f(-60.0f, -35.0f, fZ);
     glVertex3f(-60.0f, -50.0f, fZ);
     glColor3ub(0, 0, 200);
@@ -171,7 +173,7 @@ void Decor()
     glColor3ub(0, 0, 200);
     glVertex3f(60.0f, -50.0f, fZ);
     glVertex3f(60.0f, -35.0f, fZ);
-    glColor3ub(200, 0, 0);
+    glColor( barColor1 );
     glVertex3f(60.0f, -35.0f, bZ);
     glVertex3f(60.0f, -50.0f, bZ);
     glEnd();

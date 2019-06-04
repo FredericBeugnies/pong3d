@@ -184,59 +184,64 @@ void Decor()
 }
 
 
-void AfficheBarre(void)
+void drawPlayerBar( void )
 {
-    glFrontFace(GL_CCW);
+    GLfloat x = 2.0f;
+    GLfloat y = 6.0f;
+    GLfloat z = 4.0f;
 
-    glBegin(GL_QUADS);
+    glFrontFace( GL_CCW );
+
+    glBegin( GL_QUADS );
 
     glColor( playerBarColor1 );
 
-    //Face avant
-    glNormal3f(0.0f, 0.0f, 1.0f);
-    glVertex3f(-2.f, -6.f, 4.f);
-    glVertex3f(2.f, -6.f, 4.f);
-    glVertex3f(2.f, 6.f, 4.f);
-    glVertex3f(-2.f, 6.f, 4.f);
+    // front
+    glNormal3f( 0.0f, 0.0f, 1.0f );
+    glVertex3f( -x, -y, z );
+    glVertex3f( x, -y, z );
+    glVertex3f( x, y, z );
+    glVertex3f( -x, y, z );
 
-    //  Face arriere
-    glNormal3f(0.0f, 0.0f, 1.0f);
-    glVertex3f(-2.f, -6.f, -4.f);
-    glVertex3f(-2.f, 6.f, -4.f);
-    glVertex3f(2.f, 6.f, -4.f);
-    glVertex3f(2.f, -6.f, -4.f);
+    // back
+    glNormal3f( 0.0f, 0.0f, 1.0f );
+    glVertex3f( -x, -y, -z );
+    glVertex3f( -x, y, -z );
+    glVertex3f( x, y, -z );
+    glVertex3f( x, -y, -z );
 
     glColor( playerBarColor2 );
 
-    // Face superieure
-    glNormal3f(0.0f, 1.0f, 0.0f);
-    glVertex3f(-2.f, 6.f, -4.f);
-    glVertex3f(-2.f, 6.f, 4.f);
-    glVertex3f(2.f, 6.f, 4.f);
-    glVertex3f(2.f, 6.f, -4.f);
+    // top
+    glNormal3f( 0.0f, 1.0f, 0.0f );
+    glVertex3f( -x, y, -z );
+    glVertex3f( -x, y, z );
+    glVertex3f( x, y, z );
+    glVertex3f( x, y, -z );
 
-    // Face inferieure
-    glNormal3f(0.0f, -1.0f, 0.0f);
-    glVertex3f(-2.f, -6.f, -4.f);
-    glVertex3f(2.f, -6.f, -4.f);
-    glVertex3f(2.f, -6.f, 4.f);
-    glVertex3f(-2.f, -6.f, 4.f);
+    // bottom
+    glNormal3f( 0.0f, -1.0f, 0.0f );
+    glVertex3f( -x, -y, -z );
+    glVertex3f( x, -y, -z );
+    glVertex3f( x, -y, z );
+    glVertex3f( -x, -y, z );
 
     glColor( playerBarColor3 );
 
-    // face de droite
-    glNormal3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(2.f, -6.f, -4.f);
-    glVertex3f(2.f, 6.f, -4.f);
-    glVertex3f(2.f, 6.f, 4.f);
-    glVertex3f(2.f, -6.f, 4.f);
+    // right
+    glNormal3f( 1.0f, 0.0f, 0.0f );
+    glVertex3f( x, -y, -z );
+    glVertex3f( x, y, -z );
+    glVertex3f( x, y, z );
+    glVertex3f( x, -y, z );
 
-    // Face de gauche
-    glNormal3f(-1.0f, 0.0f, 0.0f);
-    glVertex3f(-2.f, -6.f, -4.f);
-    glVertex3f(-2.f, -6.f, 4.f);
-    glVertex3f(-2.f, 6.f, 4.f);
-    glVertex3f(-2.f, 6.f, -4.f);
+    // left
+    glNormal3f( -1.0f, 0.0f, 0.0f );
+    glVertex3f( -x, -y, -z );
+    glVertex3f( -x, -y, z );
+    glVertex3f( -x, y, z );
+    glVertex3f( -x, y, -z );
+
     glEnd();
 }
 
@@ -351,13 +356,13 @@ void DessinerScene(void)
     glPopMatrix();
     glPushMatrix();
     glTranslatef(58.0f, PosBarA, 0.0f);
-    AfficheBarre();
+    drawPlayerBar();
 
     // Barre B
     glPopMatrix();
     glPushMatrix();
     glTranslatef(-58.0f, PosBarB, 0.0f);
-    AfficheBarre();
+    drawPlayerBar();
     glPopMatrix();
 
     glutSwapBuffers();
